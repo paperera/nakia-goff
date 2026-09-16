@@ -1,40 +1,11 @@
 import { BlurView } from "expo-blur";
-import { isLiquidGlassAvailable } from "expo-glass-effect";
 import { Tabs } from "expo-router";
-import {
-  Icon,
-  Label,
-  NativeTabs,
-} from "expo-router/unstable-native-tabs";
 import { Feather, Ionicons } from "@expo/vector-icons";
 import React from "react";
 import { Platform, StyleSheet, View, useColorScheme } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { useColors } from "@/hooks/useColors";
-
-function NativeTabLayout() {
-  return (
-    <NativeTabs>
-      <NativeTabs.Trigger name="index">
-        <Icon sf={{ default: "person", selected: "person.fill" }} />
-        <Label>Profile</Label>
-      </NativeTabs.Trigger>
-      <NativeTabs.Trigger name="services">
-        <Icon sf={{ default: "list.bullet", selected: "list.bullet" }} />
-        <Label>Services</Label>
-      </NativeTabs.Trigger>
-      <NativeTabs.Trigger name="book">
-        <Icon sf={{ default: "calendar", selected: "calendar.fill" }} />
-        <Label>Book</Label>
-      </NativeTabs.Trigger>
-      <NativeTabs.Trigger name="gallery">
-        <Icon sf={{ default: "photo", selected: "photo.fill" }} />
-        <Label>Gallery</Label>
-      </NativeTabs.Trigger>
-    </NativeTabs>
-  );
-}
 
 function ClassicTabLayout() {
   const colors = useColors();
@@ -117,8 +88,5 @@ function ClassicTabLayout() {
 }
 
 export default function TabLayout() {
-  if (isLiquidGlassAvailable()) {
-    return <NativeTabLayout />;
-  }
   return <ClassicTabLayout />;
 }

@@ -15,9 +15,14 @@
     },
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "com.nikiajonesbeauty.app"
+      "bundleIdentifier": "com.nikiajonesbeauty.app",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
-    "android": {},
+    "android": {
+      "package": "com.nikiajonesbeauty.app"
+    },
     "web": {
       "favicon": "./assets/images/icon.png"
     },
@@ -34,6 +39,11 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "24d850ed-27da-492a-8ffe-a4629360695a"
+      }
     }
   }
 }
